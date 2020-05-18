@@ -1,0 +1,60 @@
+// MAIN SCSS - KEEP IT CLEAN
+
+html {
+  color: white;
+}
+
+a {
+  color: #FFFFFF;
+}
+
+body {
+  background-color: #FFFFFF;
+  overscroll-behavior: none;
+}
+
+.content {
+  margin-top: 6rem;
+  padding: 40px;
+}
+
+footer {
+  background: #000000;
+  padding: 40px;
+
+  h5 {
+    color: #FFFFFF;
+  }
+}
+
+.navbar-links {
+  ul {
+    display: flex;
+    margin-bottom: 0;
+  }
+
+  li {
+    display: block;
+    flex-direction: row;
+
+    a {
+      padding: 1rem;
+    }
+  }
+}
+
+.navbar {
+  padding: 40px;
+}
+
+.show {
+  .navbar-links ul {
+    flex-direction: column;
+    justify-content: left;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
