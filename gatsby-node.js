@@ -110,4 +110,31 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
   // CREATE CONTACT END
+
+  // CREATE ABOUT
+  const about = await graphql(`
+    {
+      allPrismicAbout {
+        edges {
+          node {
+            id
+            uid
+          }
+        }
+      }
+    }
+  `)
+
+  const aboutTemplate = path.resolve("src/templates/about.jsx")
+
+  about.data.allPrismicAbout.edges.forEach(edge => {
+    createPage({
+      path: `/${edge.node.uid}`,
+      component: aboutTemplate,
+      context: {
+        uid: edge.node.uid,
+      },
+    })
+  })
+  // CREATE ABOUT END
 }

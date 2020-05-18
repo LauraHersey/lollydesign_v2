@@ -2,32 +2,31 @@ import React from 'react'
 import { graphql } from "gatsby"
 
 import Layout from '../components/Layout.jsx';
-import ContactForm from '../components/ContactForm.jsx';
 
-const Contact = ({ data: { prismicContact } }) => {
-  const { data } = prismicContact
+const About = ({ data: { prismicAbout } }) => {
+  const { data } = prismicAbout
   return (
     <Layout>
       <React.Fragment>
         <h1 dangerouslySetInnerHTML={{ __html: data.page_title.text }} />
-        <div dangerouslySetInnerHTML={{ __html: data.intro.text }} />
-        <ContactForm />
+        <div dangerouslySetInnerHTML={{ __html: data.intro_copy.text }} />
       </React.Fragment>
     </Layout>
   )
 }
 
-export default Contact
+export default About
+
 
 export const pageQuery = graphql`
-  query ContactBySlug($uid: String!) {
-    prismicContact(uid: { eq: $uid }) {
+  query AboutBySlug($uid: String!) {
+    prismicAbout(uid: { eq: $uid }) {
       uid
       data {
         page_title {
           text
         }
-        intro {
+        intro_copy {
           text
         }
       }

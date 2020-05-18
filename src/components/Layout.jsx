@@ -1,6 +1,4 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
 
 import Navigation from './Nav.jsx'
 import Footer from './Footer.jsx'
@@ -12,13 +10,13 @@ class Layout extends React.Component {
         const { children } = this.props;
 
         return (
-            <Container>
+            <React.Fragment>
               <Navigation />
-              <div className="content mt-5">
-              {children}
+              <div className="content">
+                {children}
               </div>
               <Footer />
-            </Container>
+            </React.Fragment>
         );
     }
 }

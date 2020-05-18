@@ -10,7 +10,7 @@ const Project = ({ data: { prismicProject } }) => {
     <Layout>
       <React.Fragment>
         <h1 dangerouslySetInnerHTML={{ __html: data.project_title.text }} />
-          <CardDisplay images={['alton.png', 'warwick.png', 'alton.png']} />
+          <CardDisplay allData={data.body} />
         <div dangerouslySetInnerHTML={{ __html: data.project_description.text }} />
       </React.Fragment>
     </Layout>
@@ -29,6 +29,25 @@ export const pageQuery = graphql`
         }
         project_description {
           text
+        }
+        body {
+          __typename
+          ... on PrismicProjectBodyLandingPageThumbs {
+            items {
+              thumb_intro {
+                html
+              }
+              thumbnail_image {
+                url
+              }
+              thumb_title {
+                html
+              }
+              thumb_link {
+                url
+              }
+            }
+          }
         }
       }
     }

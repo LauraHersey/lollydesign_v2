@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from "gatsby"
+import Row from 'react-bootstrap/Row';
 
 import Layout from '../components/Layout.jsx';
 
@@ -10,6 +11,9 @@ const Homepage = ({ data: { prismicHomepage } }) => {
       <React.Fragment>
         <h1 dangerouslySetInnerHTML={{ __html: data.hero_title.html }} />
         <div dangerouslySetInnerHTML={{ __html: data.content.html }} />
+        <Row>
+          TEST
+        </Row>
       </React.Fragment>
     </Layout>
   )
