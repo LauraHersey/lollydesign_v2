@@ -5,6 +5,12 @@
  */
 
 
+// ENIVRONMENT NOT SETTING/PULLING CORRECTLY - NEED TO SORT THIS FOR WORKING AND DEPLOY
+// HAD TO ADD THE ENVIROMENT RATHER THAN USING THE NODE_ENV
+// `.env.${process.env.NODE_ENV}`
+require("dotenv").config({
+  path: `.env.production`,
+})
 
 module.exports = {
   /* Your site config here */
@@ -14,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `david-hersey`,
-        accessToken: GATSBY_BUILD_KEY,
+        accessToken: `${process.env.GATSBY_BUILD_KEY}`,
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
         schemas: {
           homepage: require('./src/schemas/homepage.json'),
