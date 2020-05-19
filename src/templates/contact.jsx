@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from "gatsby"
+import Row from 'react-bootstrap/Row';
 
 import Layout from '../components/Layout.jsx';
 import ContactForm from '../components/ContactForm.jsx';
@@ -8,11 +9,15 @@ const Contact = ({ data: { prismicContact } }) => {
   const { data } = prismicContact
   return (
     <Layout>
-      <React.Fragment>
-        <h1 dangerouslySetInnerHTML={{ __html: data.page_title.text }} />
-        <div dangerouslySetInnerHTML={{ __html: data.intro.text }} />
-        <ContactForm />
-      </React.Fragment>
+      <Row>
+        <div className='col-md-6'>
+          <ContactForm />
+        </div>
+        <div className='col-md-6'>
+          <h1 dangerouslySetInnerHTML={{ __html: data.page_title.text }} />
+          <div dangerouslySetInnerHTML={{ __html: data.intro.text }} />
+        </div>
+      </Row>
     </Layout>
   )
 }
