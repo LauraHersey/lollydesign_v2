@@ -8,13 +8,15 @@ const Homepage = ({ data: { prismicHomepage } }) => {
   const { data } = prismicHomepage
   return (
     <Layout>
-      <React.Fragment>
+      <Row>
+        <div className='col-md-6'>
         <h1 dangerouslySetInnerHTML={{ __html: data.hero_title.html }} />
         <div dangerouslySetInnerHTML={{ __html: data.content.html }} />
-        <Row>
+        </div>
+        <div className='col-md-6'>
           TEST
-        </Row>
-      </React.Fragment>
+        </div>
+      </Row>
     </Layout>
   )
 }

@@ -4,16 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-
-// ENIVRONMENT NOT SETTING/PULLING CORRECTLY - NEED TO SORT THIS FOR WORKING AND DEPLOY
-// HAD TO ADD THE ENVIROMENT RATHER THAN USING THE NODE_ENV
-// `.env.${process.env.NODE_ENV}`
 require("dotenv").config({
   path: `.env`,
 })
 
 module.exports = {
-  /* Your site config here */
   plugins: [
     `gatsby-plugin-sass`,
     {
@@ -29,6 +24,13 @@ module.exports = {
           contact: require('./src/schemas/contact.json'),
           about: require('./src/schemas/about.json')
         }
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
   ],

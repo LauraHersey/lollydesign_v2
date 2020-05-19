@@ -13,6 +13,10 @@ body {
   overscroll-behavior: none;
 }
 
+.copyright {
+  text-align: right;
+}
+
 .content {
   margin-top: 6rem;
   padding: 40px;
@@ -20,11 +24,30 @@ body {
 
 footer {
   background: #000000;
+  color: #FFFFFF;
   padding: 40px;
 
-  h5 {
-    color: #FFFFFF;
+  .social-icons {
+    a {
+      padding-right: .5em;
+    }
+    display: flex;
+    justify-content: flex-start;
   }
+}
+
+#___gatsby {
+  header, footer {
+    ul {
+      padding-left: 0;
+    }
+  }
+}
+
+.fbLogo, .linkedinLogo {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
 }
 
 .navbar-links {
@@ -56,5 +79,9 @@ footer {
 
 ul {
   list-style: none;
+}
+
+@media only screen and (min-width: 600px) {
+
 }
 
