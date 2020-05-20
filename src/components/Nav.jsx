@@ -9,7 +9,7 @@ class Navigation extends React.Component {
     return (
       <header>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
-          <Link to="/homepage">Lollydesign</Link>
+          <Link to="/">Lollydesign</Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto navbar-links">
