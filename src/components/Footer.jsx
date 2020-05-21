@@ -4,8 +4,8 @@ import { Link } from "gatsby"
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import FacebookLogo from "../images/fbook_logo.svg"
-import LinkedInLogo from "../images/linkedin_logo.svg"
+import FacebookLogo from "../assets/fbook_logo.svg"
+import LinkedInLogo from "../assets/linkedin_logo.svg"
 
 class Footer extends React.Component {
 
