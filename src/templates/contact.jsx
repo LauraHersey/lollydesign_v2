@@ -15,7 +15,7 @@ const Contact = ({ data: { prismicContact } }) => {
         </div>
         <div className='col-md-6'>
           <h1 dangerouslySetInnerHTML={{ __html: data.page_title.text }} />
-          <div dangerouslySetInnerHTML={{ __html: data.intro.text }} />
+          <p dangerouslySetInnerHTML={{ __html: data.intro.text }} />
         </div>
       </Row>
     </Layout>
