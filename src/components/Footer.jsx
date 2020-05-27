@@ -27,7 +27,7 @@ class Footer extends React.Component {
           <Col md={4}>
             <h5>Useful links</h5>
             <ul>
-              <li><Link to='#'>Test</Link></li>
+              <li><Link to='/blog'>Blog</Link></li>
               <li><Link to='#'>Test</Link></li>
               <li><Link to='#'>Test</Link></li>
               <li><Link to='#'>Test</Link></li>
