@@ -1,68 +1,96 @@
 {
-  "Main" : {
-    "post_title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
-        "label" : "post title"
+  "Main": {
+    "post_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "post title"
       }
     },
-    "uid" : {
-      "type" : "UID",
-      "config" : {
-        "label" : "post uid"
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "post uid"
       }
     },
-    "post_category" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading5",
-        "label" : "post category"
+    "post_body": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "post body"
       }
     },
-    "post_preview_description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph, strong, em, hyperlink, list-item",
-        "label" : "post preview description"
-      }
-    },
-    "post_author" : {
-      "type" : "Select",
-      "config" : {
-        "options" : [ "Prist Team", "Marguerite Roth" ],
-        "default_value" : "Prist Team",
-        "label" : "post author"
-      }
-    },
-    "post_hero_image" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "post hero image"
-      }
-    },
-    "post_hero_annotation" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading6, strong, em, hyperlink",
-        "allowTargetBlank" : true,
-        "label" : "post hero annotation"
-      }
-    },
-    "post_body" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
-        "allowTargetBlank" : true,
-        "label" : "post body"
-      }
-    },
-    "post_date" : {
-      "type" : "Date",
-      "config" : {
-        "label" : "post date"
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "blog_snippet": []
+        },
+        "choices": {
+          "blog_snippet": {
+            "type": "Slice",
+            "fieldset": "Blog snippet",
+            "description": "Snippet of blogs for Blog landing page",
+            "icon": "face",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "snippet_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Snippet Image"
+                }
+              },
+              "snippet_intro": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "Snippet Intro",
+                  "placeholder": "Blog intro snippet"
+                }
+              },
+              "snippet_category": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "Snippet category",
+                  "placeholder": "Blog category"
+                }
+              },
+              "snippet_poster": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "Lollydesign",
+                    "Laura"
+                  ],
+                  "default_value": "Lollydesign",
+                  "label": "Snippet poster",
+                  "placeholder": "Blog poster"
+                }
+              },
+              "snippet_post_date": {
+                "type": "Date",
+                "config": {
+                  "label": "Snippet Post Date",
+                  "placeholder": "Date of blog post"
+                }
+              },
+              "snippet_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Snippet Title",
+                  "placeholder": "Blog post title"
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
