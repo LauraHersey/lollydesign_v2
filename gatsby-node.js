@@ -137,4 +137,31 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
   // CREATE ABOUT END
+
+  // CREATE SERVICES
+  const services = await graphql(`
+    {
+      allPrismicServices {
+        edges {
+          node {
+            id
+            uid
+          }
+        }
+      }
+    }
+  `)
+
+  const servicesTemplate = path.resolve("src/templates/services.jsx")
+
+  services.data.allPrismicServices.edges.forEach(edge => {
+    createPage({
+      path: `/${edge.node.uid}`,
+      component: servicesTemplate,
+      context: {
+        uid: edge.node.uid,
+      },
+    })
+  })
+  // CREATE SERVICES END
 }

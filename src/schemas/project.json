@@ -45,12 +45,12 @@
             "display": "list",
             "non-repeat": {},
             "repeat": {
-              "thumbnail_image": {
+              "thumb_image": {
                 "type": "Image",
                 "config": {
                   "constraint": {},
                   "thumbnails": [],
-                  "label": "Thumbnail Image"
+                  "label": "Thumb Image"
                 }
               },
               "thumb_link": {

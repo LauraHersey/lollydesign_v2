@@ -22,7 +22,8 @@ module.exports = {
           project: require('./src/schemas/project.json'),
           post: require('./src/schemas/post.json'),
           contact: require('./src/schemas/contact.json'),
-          about: require('./src/schemas/about.json')
+          about: require('./src/schemas/about.json'),
+          services: require('./src/schemas/services.json')
         }
       },
     },

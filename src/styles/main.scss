@@ -20,6 +20,15 @@ body {
 .content {
   margin-top: 6rem;
   padding: 40px;
+
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  button {
+    text-decoration: none;
+  }
 }
 
 footer {
