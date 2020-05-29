@@ -10,7 +10,7 @@ class BlogDisplay extends React.Component {
       <div className="row">
         {blogData.map((post) =>  {
           return (
-            <div className='col-xs-12 col-sm-6 d-sm-flex'>
+            <div className='col-md-12'>
               <div className='d-sm-flex flex-sm-column pos-rel mb-3'>
                 <Card>
                   <Card.Body>

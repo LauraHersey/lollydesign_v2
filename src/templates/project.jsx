@@ -37,7 +37,7 @@ export const pageQuery = graphql`
               thumb_intro {
                 html
               }
-              thumbnail_image {
+              thumb_image {
                 url
               }
               thumb_title {

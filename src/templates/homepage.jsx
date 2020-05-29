@@ -3,19 +3,24 @@ import { graphql } from "gatsby"
 import Row from 'react-bootstrap/Row';
 
 import Layout from '../components/Layout.jsx';
+import CardDisplay from '../components/Card.jsx';
 
 const Homepage = ({ data: { prismicHomepage } }) => {
   const { data } = prismicHomepage
   return (
     <Layout>
       <Row>
-        <div className='col-md-6'>
-          <h1 dangerouslySetInnerHTML={{ __html: data.hero_title.text }} />
-          <div dangerouslySetInnerHTML={{ __html: data.content.html }} />
+        <div className='col-md-12'>
+          <h1 dangerouslySetInnerHTML={{ __html: data.page_title.text }} />
+          <div dangerouslySetInnerHTML={{ __html: data.intro_content.html }} />
         </div>
-        <div className='col-md-6'>
-          TEST
+        <div className='col-md-12'>
+          <CardDisplay allData={data.body} />
         </div>
+      </Row>
+        <div className='col-md-12'>
+        </div>
+      <Row>
       </Row>
     </Layout>
   )
@@ -28,11 +33,24 @@ export const pageQuery = graphql`
     prismicHomepage(uid: { eq: $uid }) {
       uid
       data {
-        hero_title {
+        page_title {
           text
         }
-        content {
-          html
+        intro_content {
+          text
+        }
+        body {
+          __typename
+          ... on PrismicHomepageBodyHomepageThumbs {
+            items {
+              thumb_title {
+                html
+              }
+              thumb_intro {
+                html
+              }
+            }
+          }
         }
       }
     }

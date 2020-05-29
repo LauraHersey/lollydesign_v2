@@ -16,12 +16,12 @@ class Footer extends React.Component {
           <Col md={4}>
             <h5>Connect with Lollydesign</h5>
             <span className="social-icons">
-                <Link to='#'>
-                  <img src={FacebookLogo} className="fbLogo" />
-                </Link>
-                <Link to='#'>
-                  <img src={LinkedInLogo} className="linkedinLogo" />
-                </Link>
+              <Link to='#'>
+                <img src={LinkedInLogo} className="linkedinLogo" />
+              </Link>
+              <Link to='#'>
+                <img src={FacebookLogo} className="fbLogo" />
+              </Link>
             </span>
           </Col>
           <Col md={4}>
