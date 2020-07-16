@@ -10,7 +10,7 @@ const Project = ({ data: { prismicProject } }) => {
     <Layout>
       <React.Fragment>
         <h1 dangerouslySetInnerHTML={{ __html: data.project_title.text }} />
-          <CardDisplay allData={data.body} />
+          <CardDisplay allData={data.body} displayType='PrismicProjectBodyLandingPageThumbs' />
         <div dangerouslySetInnerHTML={{ __html: data.project_description.text }} />
       </React.Fragment>
     </Layout>
@@ -36,12 +36,14 @@ export const pageQuery = graphql`
             items {
               thumb_intro {
                 html
+                text
               }
               thumb_image {
                 url
               }
               thumb_title {
                 html
+                text
               }
               thumb_link {
                 url
