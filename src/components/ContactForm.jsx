@@ -1,4 +1,5 @@
 import React from 'react'
+import trackingHelpers from '../helpers/trackingHelpers'
 
 class ContactForm extends React.Component {
   render () {
@@ -31,7 +32,7 @@ class ContactForm extends React.Component {
         </div>
         <div className='field'>
           <div className='control'>
-            <button className='button is-link btn btn-primary'>Submit</button>
+            <button className='button is-link btn btn-primary' onSubmit={e => trackingHelpers.eventTrack('Contact Form', 'Click', 'Submit')}>Submit</button>
           </div>
         </div>
       </form>

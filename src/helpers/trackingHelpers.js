@@ -1,6 +1,5 @@
-// Common Helpers
+// Tracking Helpers
 
-// Take out and move to use as required
 const trackingHelpers = {
   eventTrack: function (eventCategory, eventAction, eventLabel) {
     if (typeof window !== `undefined` && window.gtag) {
@@ -12,7 +11,7 @@ const trackingHelpers = {
       }
       // COMMENTED OUT WHILE I WORK OUT WHY THIS IS FIRING FOR EVERY EVENT ON PAGE LOAD RATHER THAN JUST ON CLICK OF ELEMENT
       window.gtag('event', eventAction, trackingEventOptions)
-      // NOT REQUIRED UNTIL/IF GTM
+      // NOT REQUIRED IF/WHEN WE GO GTM
       // IF/WHEN WE GO GTM NEED TO SET DATALAYER IN HTMLJS
       // <script>window.dataLayer = window.dataLayer || [];</script>
       // window.dataLayer.push(trackingEventOptions)
