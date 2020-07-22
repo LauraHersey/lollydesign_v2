@@ -11,7 +11,7 @@ const trackingHelpers = {
         event_label: eventLabel
       }
       // COMMENTED OUT WHILE I WORK OUT WHY THIS IS FIRING FOR EVERY EVENT ON PAGE LOAD RATHER THAN JUST ON CLICK OF ELEMENT
-      window.gtag('event', eventAction, trackingEventOptions)
+      // window.gtag('event', eventAction, trackingEventOptions)
     }
   },
   testTrack: function () {
