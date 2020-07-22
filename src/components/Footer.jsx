@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "gatsby"
+import trackingHelpers from '../helpers/trackingHelpers'
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -16,10 +17,10 @@ class Footer extends React.Component {
           <Col md={4}>
             <h5>Connect with Lollydesign</h5>
             <span className="social-icons">
-              <Link to='#'>
+              <Link to='#' onClick={trackingHelpers.eventTrack('Footer Link', 'Click', 'Linkedin')}>
                 <img src={LinkedInLogo} className="linkedinLogo" />
               </Link>
-              <Link to='#'>
+              <Link to='#' onClick={trackingHelpers.eventTrack('Footer Link', 'Click', 'Facebook')}>
                 <img src={FacebookLogo} className="fbLogo" />
               </Link>
             </span>
@@ -27,8 +28,8 @@ class Footer extends React.Component {
           <Col md={4}>
             <h5>Useful links</h5>
             <ul>
-              <li><Link to='/blog'>Blog</Link></li>
-              <li><Link to='#'>Test</Link></li>
+              <li><Link to='/blog' onClick={trackingHelpers.eventTrack('Footer Link', 'Click', 'Blog')}>Blog</Link></li>
+              <li><Link to='/about' onClick={trackingHelpers.eventTrack('Footer Link', 'Click', 'About')}>About</Link></li>
               <li><Link to='#'>Test</Link></li>
               <li><Link to='#'>Test</Link></li>
             </ul>

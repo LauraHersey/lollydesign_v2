@@ -2,6 +2,7 @@
  * Configure your Gatsby site with this file.
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
+ * For oprion ref: https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-analytics
  */
 
 require("dotenv").config({
@@ -32,6 +33,14 @@ module.exports = {
       options: {
         name: `assets`,
         path: `${__dirname}/src/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: process.env.GATSBY_GA_ID,
+        head: true,
+        anonymize: true,
       },
     },
   ],
