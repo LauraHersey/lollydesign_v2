@@ -1,6 +1,7 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+import trackingHelpers from '../helpers/trackingHelpers'
 
 class CardDisplay extends React.Component {
   render () {
@@ -36,8 +37,6 @@ class CardDisplay extends React.Component {
             link = item.items[0].examples_link
           }
 
-
-
           return (
             <React.Fragment>
               {title &&
@@ -55,7 +54,7 @@ class CardDisplay extends React.Component {
                           <Card.Text>{intro.text}</Card.Text>
                         }
                         {link && 
-                          <Button href={link.url} className="btn btn-primary cta" data-action="Clicked" data-category="Card Links" data-label=' - About Card'>Go to this project</Button>
+                          <Button href={link.url} className="btn btn-primary cta" onClick={trackingHelpers.eventTrack('Card Link', 'Click', title.text)}>Go to this project</Button>
                         }
                       </Card.Body>
                     </Card>
