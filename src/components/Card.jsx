@@ -11,7 +11,7 @@ class CardDisplay extends React.Component {
 
     return (
       <div className="row">
-        {allData.map((item) =>  {
+        {allData.map((item, index) =>  {
           console.log('IN CARD ALL DATA:', item.__typename)
 
           // WE NEED DIFFERENCES IN VALUES FOR DIFFERENT USES BUT NEED TO LOOK AT THIS FURTHER
@@ -38,7 +38,7 @@ class CardDisplay extends React.Component {
           }
 
           return (
-            <React.Fragment>
+            <React.Fragment key={index}>
               {title &&
                 <div className='col-xs-12 col-sm-3'>
                   <div className='d-sm-flex flex-sm-column pos-rel mb-3'>
@@ -53,8 +53,8 @@ class CardDisplay extends React.Component {
                         {intro &&
                           <Card.Text>{intro.text}</Card.Text>
                         }
-                        {link && 
-                          <Button href={link.url} className="btn btn-primary cta" onClick={trackingHelpers.eventTrack('Card Link', 'Click', title.text)}>Go to this project</Button>
+                        {link &&
+                          <Button href={link.url} className="btn btn-primary cta" onClick={e => trackingHelpers.eventTrack('Card Link', 'Click', title.text)}>Go to this project</Button>
                         }
                       </Card.Body>
                     </Card>
