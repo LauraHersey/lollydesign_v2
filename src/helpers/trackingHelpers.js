@@ -11,7 +11,11 @@ const trackingHelpers = {
         event_label: eventLabel
       }
       // COMMENTED OUT WHILE I WORK OUT WHY THIS IS FIRING FOR EVERY EVENT ON PAGE LOAD RATHER THAN JUST ON CLICK OF ELEMENT
-      // window.gtag('event', eventAction, trackingEventOptions)
+      window.gtag('event', eventAction, trackingEventOptions)
+      // NOT REQUIRED UNTIL/IF GTM
+      // IF/WHEN WE GO GTM NEED TO SET DATALAYER IN HTMLJS
+      // <script>window.dataLayer = window.dataLayer || [];</script>
+      // window.dataLayer.push(trackingEventOptions)
     }
   },
   testTrack: function () {
