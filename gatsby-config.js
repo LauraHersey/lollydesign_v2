@@ -2,7 +2,9 @@
  * Configure your Gatsby site with this file.
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
- * For oprion ref: https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-analytics
+ * For analytics options ref: 
+ * https://www.gatsbyjs.org/packages/gatsby-plugin-google-gtag
+ * https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-analytics
  */
 
 require("dotenv").config({
@@ -36,11 +38,17 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-gtag`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: process.env.GATSBY_GA_ID,
-        head: true,
-        anonymize: true,
+        trackingIds: [
+          process.env.GATSBY_GA_ID,
+        ],
+        pluginConfig: {
+          head: true,
+        },
+        gtagConfig: {
+          anonymize: true,
+        },
       },
     },
   ],
